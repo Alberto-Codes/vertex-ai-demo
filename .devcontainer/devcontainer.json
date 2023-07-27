@@ -15,7 +15,8 @@
 				"ms-python.black",
 				"ms-python.isort",
 				"GitHub.vscode-pull-request-github",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-python.pylint"
 			]
 		}
 	},
