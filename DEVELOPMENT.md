@@ -1,3 +1,9 @@
+#Prerequisites
+
+GitHub account
+
+Google Cloud account with billing enabled: https://cloud.google.com/billing/docs/how-to/manage-billing-account
+
 # Development Environment
 
 To open this project in Codespaces:
@@ -44,15 +50,34 @@ Back in Codespaces, paste the copied authorization code at the prompt to complet
 ### Create GCP Project
 You only need to do this once.  If you haven't created a project skip down to Switch to Project section
 ```bash
-gcloud projects create vertex-ai-gcp-demo
+gcloud projects create <project name>
 ```
-
+replace <project name> with a project name of your choosing
 ### Check Project
 ```bash
-gcloud projects describe vertex-ai-gcp-demo
+gcloud projects describe <project name>
 ```
 
 ### Switch to Project
 ```bash
-gcloud config set project vertex-ai-gcp-demo
+gcloud config set project <project name>
 ```
+```
+
+### Create Bucket
+```bash
+gsutil mb gs:/<data bucket name>
+```
+replace <data bucket name> with a bucket name of your choosing
+### Download Data locally
+```bash
+wget https://storage.googleapis.com/download.tensorflow.org/data/creditcard.csv
+```
+
+### Copy Data to Bucket
+```bash
+gsutil cp creditcard.csv gs://<data bucket name>
+```
+
+### login to GCP
+Go to your dashboard and select the project you created.  You should see the bucket you created and the data file in the bucket.
